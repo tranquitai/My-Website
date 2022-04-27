@@ -1,0 +1,882 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Welcome to Book Store</title>
+    <!--BT 4 CSS-->
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!--My css-->
+    <link rel="stylesheet" href="mycss/style.css">
+    <!--BT 4 JS-->
+    <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <script>
+        function testTen() {
+            var regt = /[A-Za-z]{4,}/;
+            var ten = document.getElementById("txtname").value;
+            if (regt.test(ten) == false) {
+                document.getElementById("er1").innerHTML = "Ít nhất 4 ký tự";
+                return false;
+            } else {
+                document.getElementById("er1").innerHTML = "";
+                return true;
+            }
+        }
+
+        // function kiem tra cho mat khau, mat khau la cac ky tu so va chu, có it nhat 1 ky tu dac biet va co it nhat 8 ky tu
+        function testpass() {
+            var regmk = /^(\w){8,}[\!\@\#\$\%\^\&\_\)\(]*\w*$/;
+            var mk = document.getElementById("txtpass").value;
+            if (regmk.test(mk)) {
+                document.getElementById("er2").innerHTML = "";
+                return true;
+            } else {
+                document.getElementById("er2").innerHTML = "Mat khau la cac ky tu so va chu, có it nhat 1 ky tu dac biet va co it nhat 8 ky tu!!!";
+                return false;
+            }
+
+        }
+
+        //viet them funtion kiem tra nhap lai mat khau 
+        function testepass() {
+            var mk = document.getElementById("txtpass").value;
+            var mk2 = document.getElementById("txtpass2").value;
+            if (mk == mk2) {
+                document.getElementById("er3").innerHTML = "";
+                return true
+            } else {
+                document.getElementById("er3").innerHTML = "Mat khau khong dung mat khau tren!!!";
+                return false
+            }
+        }
+        //kiem tra email
+        function testmail() {
+            var rege = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+            var mal = document.getElementById("txtemail").value;
+            if (rege.test(mal) == false) {
+                document.getElementById("er4").innerHTML = "nhập sai email";
+                return false
+            } else {
+                document.getElementById("er4").innerHTML = "";
+                return true
+            }
+        }
+
+        function testphone() {
+            var regp = /[0-9]{10}/;
+            var pon = document.getElementById("txtphone").value;
+            if (regp.test(pon) == false) {
+                document.getElementById("er5").innerHTML = "nhập 10 số";
+                return false
+            } else {
+                document.getElementById("er5").innerHTML = "";
+                return true
+            }
+        }
+
+        function testcmnd() {
+            var regc = /[0-9]{9}/;
+            var cm = document.getElementById("txtcmnd").value;
+            if (regc.test(cm) == false) {
+                document.getElementById("er6").innerHTML = "nhập 9 số";
+                return false
+            } else {
+                document.getElementById("er6").innerHTML = "";
+                return true
+            }
+        }
+
+        function test() {
+            if (testepass() == true && testepass() == true && testTen() == true && testepass() == true && testphone() == true && testcmnd() == true)
+                document.getElementById("btntest").disabled = false;
+        }
+
+        function show() {
+            window.alert("Sign up successfull")
+        }
+    </script>
+
+</head>
+
+<body>
+    <!--Top-->
+    <section class="s-top" style="background-color: #292929;height:80px;">
+        <div class="container ">
+            <div class="row pt-2">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 d-none d-sm-block" style="background-color: #292929; color:#afafaf">
+                    <span>Welcome to <span style="color: #ffc82e;">Books Store</span></span>
+                    &#124;
+                    <span>Hotline: <span style="color: #ffc82e;">0384553256</span></span>
+
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="background-color: #292929; color:#afafaf">
+                    <div class="login-top">
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"><a><i class="fas fa-key"></i> Sign up</a></button>
+
+                        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#mymodal"><a><i class="fas fa-key"></i> Login</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="clearfix header d-md-block d-none d-md-block" style="height: 120px;background-color:#292929;">
+        <div class="container">
+            <div class="row pt-2" style="height: 110px;">
+                <div class="col-7 col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                    <div class="logo">
+                        <a class="logo" href="#"><img src="images/logo/logobookstore.jpg" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 d-none d-sm-block">
+                    <div class="form-search">
+                        <form class="mid-search">
+                            <input class="search" type="search" placeholder=" What are you looking for ?">
+                        </form>
+                    </div>
+
+                </div>
+                <div class="col-4 col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <div class="cart">
+                        <a class="cart" href="#">
+                            <span><i class="fas fa-cart-plus"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Nav-->
+    <section class="menu " style="background:#212529;">
+        <div class="container ">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand d-md-none" href="#"><img src="images/logo/logobookstore.jpg" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#au">About</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Products
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#sm">Sách mới</a>
+                                <a class="dropdown-item" href="#sb">Sách bán chạy</a>
+                                <a class="dropdown-item" href="#tt">Tuyển tập</a>
+                                <a class="dropdown-item" href="#km">khuyễn mãi</a>
+                                <a class="dropdown-item" href="#tg">Tác Giả nổi bật</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#dm">Danh mục sản phẩm</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#au">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0 d-md-none">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                    <a class="nav-link d-md-none" href="#" style="font-size: 30px; "><i class="fas fa-cart-arrow-down"></i></a>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section class=slideshow>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/slideshow/1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slideshow/2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slideshow/3.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slideshow/4.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/slideshow/5.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <section class="clearfix-main" style="min-height:1850px;background-color: white;">
+        <div class="container">
+            <div class="row pt-4">
+                <!--List Category-->
+                <div class="col-3 d-none d-sm-block">
+                    <ul class="list-group">
+                        <li class="list-group-item" id="dm">Danh mục sản phẩm</li>
+                        <li class="list-group-item">
+                            <div class="dropdown">
+                                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fas fa-arrow-alt-circle-right"></i> Sách mới
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-left" style="background-color:white">
+                                    <li>Phải lòng với cô đơn</li>
+                                    <li>Tôi không thíc ồn ào</li>
+                                    <li>Rich Habits Poor Habits</li>
+                                    <li>Marketting Online 4.0</li>
+                                    <li>Code dạo ký sự</li>
+                                    <li>Bí mật tài chính người giàu (Tập 2)</li>
+                                    <li>...</li>
+                                </ul>
+                            </div>
+                        </li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">
+                                <div class="dropdown">
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>Sách nỗi bật
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-left" style="background-color:white">
+                                        <li>Fooled By Randomness: The Hidden Role of Chance in Life </li>
+                                        <li>Hack Não 1500</li>
+                                        <li>Rich Habits Poor Habits</li>
+                                        <li>Marketting Online 4.0</li>
+                                        <li>Code dạo ký sự</li>
+                                        <li>Becoming A Supple Leopard 2nd Edition</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">
+                                <div class="dropdown">
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>Sách bán chạy
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-left" style="background-color:white">
+                                        <li>Muôn Kiếp Nhân Sinh</li>
+                                        <li>Nghệ thuật nổi giận</li>
+                                        <li>Tôi quyết định sống cho chính tôi</li>
+                                        <li>The magic phép màu</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">
+                                <div class="dropdown">
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>Sách khuyến mãi
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-left" style="background-color:white">
+                                        <li>10 phút tự học mỗi ngày</li>
+                                        <li>Nhìn mặt mà bắt hình dong</li>
+                                        <li>Sách ngôn tình Hải yêu tập 2</li>
+                                        <li>Điều kỳ diệu cho con</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">
+                                <div class="dropdown">
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>Sách giáo khoa
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-left" style="background-color:white">
+                                        <li>Tiếng Việt 1 - Tập 2 (Bộ Sách Cánh Diều)</li>
+                                        <li>Sách Giáo Khoa Bộ Lớp 5 - Sách Bài Tập (Bộ 11 Cuốn)</li>
+                                        <li>Sách Giáo Khoa Bộ Lớp 9 - Sách Bài Tập (Bộ 7 Cuốn)</li>
+                                        <li>Sách Giáo Khoa Bộ Lớp 7 - Sách Bài Tập (Bộ 6 Cuốn)</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">
+                                <div class="dropdown">
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>Truyện tranh
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-left" style="background-color:white">
+                                        <li>Naruto(Bộ đầy đủ)</li>
+                                        <li>Thanh Gươm Diệt Quỷ - Kimetsu No Yaiba(Bộ đầy đủ)</li>
+                                        <li>Bẩy viên ngọc rồng - Dragon ball super(Bộ đầy đủ</li>
+                                        <li>Vua hải tặc - One piece(Bộ đầy đủ)</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">
+                                <div class="dropdown">
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-arrow-alt-circle-right"></i> Sách trong nước
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-left" style="background-color:white">
+                                        <li>Điều kỳ diệu cho con</li>
+                                        <li>Muôn Kiếp Nhân Sinh</li>
+                                        <li>Tôi không thíc ồn ào</li>
+                                        <li>Mắc biếc</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">
+                                <div class="dropdown">
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>Sách nước ngoài
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-left" style="background-color:white">
+                                        <li>Marketting Online 4.0</li>
+                                        <li>Becoming A Supple Leopard 2nd Edition</li>
+                                        <li>#Girlboss</li>
+                                        <li>Colorful – Mori Eto</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li class="list-group-item">
+                                <div class="dropdown">
+                                    <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-arrow-alt-circle-right"></i>Khác
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-left" style="background-color:white">
+                                        <li>Máy tính casio</li>
+                                        <li>Đèn học</li>
+                                        <li>Các dụng cụ học tập(bút, tập, thước,...</li>
+                                        <li>...</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </a>
+
+                    </ul>
+                    <ul class="list-group pt-5">
+                        <li class="list-group-item">Tác giả nổi bật</li>
+                        <li class="list-group-item"></li>
+                        <li class="list-group-item">Nguyễn Ngọc Ánh</li>
+                        <li class="list-group-item">Hamlet Trương</li>
+                        <li class="list-group-item">Nguyễn Ngọc Tư</li>
+                        <li class="list-group-item">Rosie Nguyễn</li>
+                        <li class="list-group-item">Du Phong</li>
+                        <li class="list-group-item">...</li>
+                    </ul>
+                </div>
+                <!--Main right-->
+                <div class="col-12 col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                    <div class="h3-main">
+                        <a id="sm">
+                            <b>
+                                Sách Mới
+                            </b>
+                        </a>
+                        <div class="next-product">
+                            <a href=""><i class="fas fa-chevron-left"></i></a>
+
+                            <a href=""><i class="fas fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="list-san-pham-noi-bac1 pt-2">
+                        <div class="row">
+                            <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <div class="card">
+                                    <a href="product1.html">
+                                        <img src="images/product/h1.jpeg" class="card-img-top" alt="...">
+                                        <div class="info-product">
+                                            <h5 style="text-align: center; margin-top:10px;">Phải lòng với cô đơn</h5>
+                                            <div class="price">
+                                                <span>86.000 <sup>đ</sup></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="product1.html">Mua hàng</a>
+
+                                </div>
+                            </div>
+                            <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <div class="card">
+                                    <a href="product2.html">
+                                        <img src="images/product/h2.jpeg" class="card-img-top" alt="...">
+                                        <div class="info-product">
+                                            <h5 style="text-align: center; margin-top:10px;">Tôi không thích ồn ào</h5>
+                                            <div class="price">
+                                                <span>90.000 <sup>đ</sup></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="product2.html">Mua hàng</a>
+
+                                </div>
+                            </div>
+                            <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <div class="card">
+                                    <a href="product3.html">
+                                        <img src="images/product/h3.jpeg" class="card-img-top" alt="...">
+                                        <div class="info-product">
+                                            <h5 style="text-align: center; margin-top:10px;">Rich Habits Poor Habits</h5>
+                                            <div class="price">
+                                                <span>128.000 <sup>đ</sup></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="product3.html">Mua hàng</a>
+
+                                </div>
+                            </div>
+                            <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <div class="card">
+                                    <a href="product4.html">
+                                        <img src="images/product/h4.jpeg" class="card-img-top" alt="...">
+                                        <div class="info-product">
+                                            <h5 style="text-align: center; margin-top:10px;">Marketting Online 4.0</h5>
+                                            <div class="price">
+                                                <span>207.200 <sup>đ</sup></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="product4.html">Mua hàng</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-san-pham-noi-bac1">
+                        <div class="row pt-4">
+                            <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <div class="card">
+                                    <a href="product5.html">
+                                        <img src="images/product/h5.jpeg" class="card-img-top" alt="...">
+                                        <div class="info-product">
+                                            <h5 style="text-align: center; margin-top:10px;">Bí mật tài chính người giàu (Tập 2)</h5>
+                                            <div class="price">
+                                                <span>63.000 <sup>đ</sup></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="product5.html">Mua hàng</a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <div class="card">
+                                    <a href="product6.html">
+                                        <img src="images/product/h6.jpeg" class="card-img-top" alt="...">
+                                        <div class="info-product">
+                                            <h5 style="text-align: center; margin-top:10px;">Code dạo ký sự</h5>
+                                            <div class="price">
+                                                <span>127.200 <sup>đ</sup></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="product6.html">Mua hàng</a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <div class="card">
+                                    <a href="product7.html">
+                                        <img src="images/product/h7.jpeg" class="card-img-top" alt="...">
+                                        <div class="info-product">
+                                            <h5 style="text-align: center; margin-top:10px;">Các Chòm Sao: Toàn Cảnh Về Bầu trời đêm</h5>
+                                            <div class="price">
+                                                <span>152.000 <sup>đ</sup></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="product7.html">Mua hàng</a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                <div class="card">
+                                    <a href="product8.html">
+                                        <img src="images/product/h8.jpeg" class="card-img-top" alt="...">
+                                        <div class="info-product">
+                                            <h5 style="text-align: center; margin-top:10px;">Bước vào cửa nhiệm màu</h5>
+                                            <div class="price">
+                                                <span>103.000 <sup>đ</sup></span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="product8.html">Mua hàng</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Tuyển tập-->
+                    <div class="content-laptop pt-4">
+                        <div class="h3-main">
+                            <a id="tt"><b>Tuyển Tập</b></a>
+                        </div>
+                        <div class="row pt-4">
+                            <div class="col-3 choose">
+                                <a href="#"><img src="images/product/NNA.jpeg" class="card-img-top" alt="..."></a>
+                            </div>
+                            <div class="col-3 choose">
+                                <a href="#"><img src="images/product/HLT.jpeg" class="card-img-top" alt="..."></a>
+                            </div>
+                            <div class="col-3 choose">
+                                <a href="#"><img src="images/product/NNT.jpeg" class="card-img-top" alt="..."></a>
+                            </div>
+                            <div class="col-3 choose">
+                                <a href="#"><img src="images/product/DuPhong.jpg" class="card-img-top" alt="..."></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--San pham ban chay--->
+                    <div class="San-pham-ban-chay pt-4">
+                        <div class="h3-main">
+                            <a id="sb"><b>Sách Bán Chạy Nhất</b></a>
+                            <div class="next-product">
+                                <a href=""><i class="fas fa-chevron-left"></i></a>
+
+                                <a href=""><i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="list-san-pham-noi-bac1 pt-2">
+                            <div class="row">
+                                <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    <div class="card">
+                                        <a href="product9.html">
+                                            <img src="images/product/h9.jpeg" class="card-img-top" alt="...">
+                                            <div class="info-product">
+                                                <h5 style="text-align: center; margin-top:10px;">Muôn Kiếp Nhân Sinh</h5>
+                                                <div class="price" style="text-align: center;">
+                                                    <span>109.000 <sup>đ</sup></span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="product9.html">Mua hàng</a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    <div class="card">
+                                        <a href="product10.html">
+                                            <img src="images/product/h10.jpeg" class="card-img-top" alt="...">
+                                            <div class="info-product">
+                                                <h5 style="text-align: center; margin-top:10px;">Nghệ thuật nổi giận</h5>
+                                                <div class="price" style="text-align: center;">
+                                                    <span>42.500 <sup>đ</sup></span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="product10.html">Mua hàng</a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    <div class="card">
+                                        <a href="product11.html">
+                                            <img src="images/product/h11.jpeg" class="card-img-top" alt="...">
+                                            <div class="info-product">
+                                                <h5 style="text-align: center; margin-top:10px;">Tôi quyết định sống cho chính tôi</h5>
+                                                <div class="price" style="text-align: center;">
+                                                    <span>64.200 <sup>đ</sup></span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="product11.html">Mua hàng</a>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                    <div class="card">
+                                        <a href="product12.html">
+                                            <img src="images/product/h12.jpeg" class="card-img-top" alt="...">
+                                            <div class="info-product">
+                                                <h5 style="text-align: center; margin-top:10px;">The magic phép màu</h5>
+                                                <div class="price" style="text-align: center;">
+                                                    <span>180.400 <sup>đ</sup></span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="product12.html">Mua hàng</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!---Sản phẩm khuyến mãi-->
+        <div class="khuyen-mai" style=" margin-top: 20px;">
+            <div class="container" style="padding-top: 20px;">
+                <div class="h3-main">
+                    <a id="km"><b>Khuyến Mãi</b></a>
+                    <div class="next-product">
+                        <a href=""><i class="fas fa-chevron-left"></i></a>
+
+                        <a href=""><i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="row pt-2">
+                    <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="card" style="height: 450px;">
+                            <a href="product13.html">
+                                <img src="images/product/h13.jpeg" class="card-img-top" alt="...">
+                                <div class="info-product">
+                                    <h5 style="text-align: center; margin-top:20px;">10 phút tự học mỗi ngày</h5>
+                                    <div class="price-promotion" style="text-align: center;">
+                                        <span class="promotion-product">79.000</span><sup>đ</sup><br>
+                                        <span class="price-new">55.300</span><sup>đ</sup>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="product13.html">Mua ngay</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="card" style="height: 450px">
+                            <a href="product14.html">
+                                <img src="images/product/h14.jpeg" class="card-img-top" alt="...">
+                                <div class="info-product">
+                                    <h5 style="text-align: center; margin-top:20px;">Nhìn mặt mà bắt hình dong</h5>
+                                    <div class="price-promotion" style="text-align: center;">
+
+                                        <span class="promotion-product">75.000</span><sup>đ</sup><br>
+                                        <span class="price-new">52.500</span><sup>đ</sup>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="product14.html">Mua ngay</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="card" style="height: 450px">
+                            <a href="product15.html">
+                                <img src="images/product/h15.jpeg" class="card-img-top" alt="...">
+                                <div class="info-product">
+                                    <h5 style="text-align: center; margin-top:20px;">Sách ngôn tình Hải yêu tập 2</h5>
+                                    <div class="price-promotion" style="text-align: center;">
+
+                                        <span class="promotion-product">119.000</span><sup>đ</sup><br>
+                                        <span class="price-new">83.300</span><sup>đ</sup>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="product15.html">Mua ngay</a>
+                        </div>
+                    </div>
+                    <div class="col-6 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <div class="card" style="height: 450px">
+                            <a href="product16.html">
+                                <img src="images/product/h16.jpeg" class="card-img-top" alt="...">
+                                <div class="info-product">
+                                    <h5 style="text-align: center; margin-top:20px;">Điều kỳ diệu cho con</h5>
+                                    <div class="price-promotion" style="text-align: center;">
+
+                                        <span class="promotion-product">87.000</span><sup>đ</sup><br>
+                                        <span class="price-new">53.000</span><sup>đ</sup>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="product16.html">Mua ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Footer-->
+    <section class="clearfix footer" style="min-height:300px;background-color: #292929;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                    <div class="logofooter">
+                        <h3 style="color:white;; margin-top: 30px;text-transform: uppercase;font-family: Georgia, 'Times New Roman', Times, serif;"><u id="au">About Us</u></h3>
+                        <div class="imglogo">
+                            <img src="images/logo/logobookstore.jpg" alt=" logo ">
+                        </div>
+                        <p style="margin-top: 20px; ">Welcome To Our Store</p>
+                        <p>
+                            Thương hiệu sách Books Store là địa chỉ tin cậy cho các tác giả trẻ Việt Nam gửi gắm tác phẩm của mình. Hãy để BookStore trở thành người đưa đứa con tinh thần của bạn đến với công chúng!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-12 col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                    <div class="infor ">
+                        <h5>Doanh mục</h5>
+                        <a href="# ">Người dùng</a>
+                        <a href="# ">Giới thiệu</a>
+                        <a href="# ">Sản phẩm</a>
+                        <a href="# ">Tin tức</a>
+                        <a href="# ">Liên hệ</a>
+                    </div>
+                </div>
+                <div class="col-12 col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                    <div class="infor ">
+                        <h5>Dịch vụ</h5>
+                        <a href="# "><i class="fas fa-shipping-fast "></i> Vận chuyển miễn phí</a>
+                        <a href="# "><i class="fas fa-tools "></i> Đổi trả</a>
+                        <a href="# "><i class="fas fa-handshake "></i> Chăm sóc khách hàng</a>
+                    </div>
+                </div>
+                <div class="col-12 col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+                    <div class="infor-bottom ">
+                        <h5>Thông tin</h5>
+                        <p><i class="fas fa-phone "></i> Holline:<a href=" "> 0384553256</a></p>
+                        <p><i class="fas fa-phone "></i> Holline:<a href=" "> 0902643385</a></p>
+                        <p><i class="fas fa-map-marker-alt "></i> Address: Ho Chi Minh City</p>
+                        <p><i class="far fa-envelope "></i> Email: <a href="# ">quitaitran0@gmail.com</a></p>
+                        <a href="https://www.facebook.com/BooksStore-105183984604459"><i class="fab fa-facebook fa-2x "></i></a>
+                        <a href="https://mail.google.com/"><i class="fab fa-google-plus fa-2x "></i></a>
+                        <a href="https://twitter.com/"><i class="fab fa-twitter-square fa-2x "></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec-bottom " style="height: 50px;background-color:#363533; ">
+        <div class="container ">
+            <span>&copy;</span>
+            <span>Bản quyền thuộc về <span style="color:#ffc82e ">Nhóm Web</span></span>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h4 class="modal-title">
+                            <h2>Sign up</h2>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="label-control col-xs-12 col-sm-12 col-md-12 col-lg-12">User Name</label>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                    <input type="text" placeholder="NguyenVip" class="form-control" id="txtname" onblur="testTen()"> <span id="er1">*</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">PassWord</label>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                    <input type="password" id="txtpass" onblur="testpass()" class="form-control"><span id="er2">*</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-control col-xs-5 col-sm-5 col-md-5 col-lg-5">Enter PassWord</label>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                    <input type="password" id="txtpass2" onblur="testepass()" class="form-control"><span id="er3">*</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">Email</label>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                    <input type="email" id="txtemail" onblur="testmail()" class="form-control" placeholder="taicunho1@gmail.com"> <span id="er4">*</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">Phone</label>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                    <input type="tel" id="txtphone" onblur="testphone()" class="form-control"> <span id="er5">*</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">CMND</label>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                    <input type="text" id="txtcmnd" onblur="testcmnd(),test()" class="form-control"> <span id="er6">*</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <button class="btn btn-info " disabled="disabled" id="btntest" onclick="show()">Sign up</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <!-- Modal -->
+        <div class="modal fade" id="mymodal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h4 class="modal-title">
+                            <h2>Login</h2>
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="label-control col-xs-12 col-sm-12 col-md-12 col-lg-12">User Name</label>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                    <input type="text" id="txtname" placeholder="nhap Username" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="label-control col-xs-3 col-sm-3 col-md-3 col-lg-3">PassWord</label>
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                    <input type="password" id="txtpass" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                    <button class="btn btn-info" id="btntest">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,614 @@
+.h3-main {
+    border-bottom: 1px solid #c7c6c6;
+}
+
+
+/*Section-top*/
+
+.login-top:hover {
+    text-decoration: none;
+    color: #ffc82e;
+}
+
+.login-top {
+    float: right;
+    margin-left: 20px;
+    color: #afafaf;
+}
+
+.logo {
+    height: 100%;
+    width: 100%;
+}
+
+.logo>a {
+    display: block;
+}
+
+.logo>a>img {
+    padding-top: ;
+}
+
+.form-search {
+    padding-top: 20px;
+}
+
+.mid-search,
+.search {
+    height: 50px;
+    width: 350px;
+    outline: 0;
+    outline-style: none;
+    outline-width: 0;
+}
+
+.cart>a {
+    display: block;
+    font-size: 30px;
+    float: right;
+    padding-top: 20px;
+    color: #afafaf;
+}
+
+.cart>a:hover {
+    color: #ffc82e;
+}
+
+
+/*Nav*/
+
+
+/*Main-left*/
+
+.list-group>li:first-child {
+    display: block;
+    height: 50px;
+    text-transform: uppercase;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #ffc82e;
+    padding-top: 12px;
+    border-top: 2px solid #ffc82e;
+    background-color: #363533;
+}
+
+.h3-main>a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+}
+
+.h3-main>a:hover {
+    color: #ffc82e;
+}
+
+.list-group>a {
+    color: black;
+}
+
+.list-group>a:hover {
+    color: #ffc82e;
+    text-decoration: none;
+}
+
+.list-group>a:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+/*Main-product*/
+
+.next-product {
+    float: right;
+}
+
+.next-product>a {
+    color: #ffc82e;
+}
+
+.info-product>h5 {
+    color: rgb(70, 70, 70);
+    font-size: 18px;
+    display: block;
+    height: 30px;
+}
+
+.price-promotion {
+    padding-top: 40px;
+}
+
+.price {
+    text-align: center;
+    padding-top: 10px;
+}
+
+
+/*Sản phẩm khuyến mãi (Promotion product)*/
+
+.khuyen-mai {
+    background-size: cover;
+}
+
+.promotion-product {
+    margin-top: 10px;
+    text-decoration: line-through;
+    color: grey;
+}
+
+.price-new {
+    font-size: 20px;
+}
+
+
+/*Footer*/
+
+.infor>a {
+    display: block;
+    color: #a9a9a9;
+    text-decoration: none;
+}
+
+.infor>a:hover {
+    color: #ffc82e;
+}
+
+.infor>h5 {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 30px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.infor>a {
+    color: #a9a9a9;
+    margin-top: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.logofooter>p {
+    color: #a9a9a9;
+}
+
+
+/*Sec-Bottom*/
+
+.sec-bottom {
+    color: #a9a9a9;
+    font-size: 20px;
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.infor-bottom>h5 {
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.infor-bottom>p,
+.infor-bottom>a {
+    margin-left: 50px;
+    color: #a9a9a9;
+}
+
+.infor-bottom>p>a {
+    color: #a9a9a9;
+    text-decoration: none;
+}
+
+.infor-bottom>p>a:hover,
+.infor-bottom>a:hover {
+    color: #ffc82e;
+}
+
+.info-product>.buy-product {
+    display: none;
+}
+
+
+/*Card product*/
+
+.card:hover {
+    background-color: rgba(187, 187, 187, 0.76);
+}
+
+.card {
+    height: 280px;
+}
+
+.card>a {
+    text-decoration: none;
+}
+
+.price {
+    color: red;
+}
+
+.card>a:last-child {
+    text-decoration: none;
+    color: #f0b000;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.card>a:last-child:hover {
+    color: red;
+}
+
+.choose {
+    margin-top: -7px;
+}
+
+
+/*Card-news*/
+
+.card-news {
+    border-left: 1px solid #ffc82e;
+    border-right: 1px solid #ffc82e;
+}
+
+.info-new>a {
+    color: grey;
+    text-decoration: none;
+}
+
+.info-new>a:hover {
+    color: #ffc82e;
+}
+
+
+/*Mobile*/
+
+@media all and (max-width: 968px) {
+    .clearfix-main {
+        min-height: 4350px;
+    }
+    .khuyen-mai {
+        min-height: 850px;
+    }
+    .tin-tuc {
+        min-height: 1200px;
+    }
+    .footer>.container>.row>.col-12 {
+        border-bottom: 1px solid rgb(184, 182, 182);
+    }
+    .infor>a {
+        text-align: left;
+    }
+    .infor-bottom>p,
+    .infor-bottom>a {
+        margin-left: 0px;
+    }
+    .card {
+        min-height: 300px;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+i {
+    margin-right: 10px;
+}
+
+
+/*----------multi-level-accordian-menu------------*/
+
+.navbar-logo {
+    padding: 15px;
+    color: #fff;
+}
+
+.navbar-mainbg {
+    background-color: #5161ce;
+    padding: 0px;
+}
+
+#navbarSupportedContent {
+    overflow: hidden;
+    position: relative;
+}
+
+#navbarSupportedContent ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+#navbarSupportedContent ul li a i {
+    margin-right: 10px;
+}
+
+#navbarSupportedContent li {
+    list-style-type: none;
+    float: left;
+}
+
+#navbarSupportedContent ul li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 20px 20px;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+}
+
+#navbarSupportedContent>ul>li.active>a {
+    color: #5161ce;
+    background-color: transparent;
+    transition: all 0.7s;
+}
+
+#navbarSupportedContent a:not(:only-child):after {
+    content: "\f105";
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 14px;
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    transition: 0.5s;
+}
+
+#navbarSupportedContent .active>a:not(:only-child):after {
+    transform: rotate(90deg);
+}
+
+.hori-selector {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: #fff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    margin-top: 10px;
+}
+
+.hori-selector .right,
+.hori-selector .left {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    bottom: 10px;
+}
+
+.hori-selector .right {
+    right: -25px;
+}
+
+.hori-selector .left {
+    left: -25px;
+}
+
+.hori-selector .right:before,
+.hori-selector .left:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #5161ce;
+}
+
+.hori-selector .right:before {
+    bottom: 0;
+    right: -25px;
+}
+
+.hori-selector .left:before {
+    bottom: 0;
+    left: -25px;
+}
+
+@media (max-width: 991px) {
+    #navbarSupportedContent ul li a {
+        padding: 12px 30px;
+    }
+    .hori-selector {
+        margin-top: 0px;
+        margin-left: 10px;
+        border-radius: 0;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+    .hori-selector .left,
+    .hori-selector .right {
+        right: 10px;
+    }
+    .hori-selector .left {
+        top: -25px;
+        left: auto;
+    }
+    .hori-selector .right {
+        bottom: -25px;
+    }
+    .hori-selector .left:before {
+        left: -25px;
+        top: -25px;
+    }
+    .hori-selector .right:before {
+        bottom: -25px;
+        left: -25px;
+    }
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+/* Set a style for all buttons */
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* Extra styles for the cancel button */
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+
+/* Center the image and position the close button */
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* The Close Button (x) */
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+
+/* Add Zoom Animation */
+
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+#er1,
+#er2,
+#er3,
+#er4 {
+    color: red;
+}
